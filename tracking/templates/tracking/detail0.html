@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento</title>
+</head>
+<style>
+    body{
+        background-color: rgb(12, 12, 12);
+        color: white;
+        font: normal 14pt Times;    
+    }
+    form{
+        background-color: grey;
+        margin: 3em;
+        margin-top: 1em;
+        width: 1300px;
+        padding: 1em;
+        border: 1px solid #ccc;
+        border-radius: 1em;
+    }
+</style>
+
+<script  type ="text/javascript">
+    function agora()
+        {
+            diaDaSemana = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
+            mesNome = new Array("Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","NOv","Dez")
+            now = new Date();
+            data = now.getDay() + "/" + ( now.getMonth()+1 )  + "/" + now.getFullYear()
+            hora = now.getHours() + ":" + now.getMinutes()
+            hoje = data + " " + hora + " - " + diaDaSemana[now.getDay()] + '-feira'
+            mens = "# Detalhe de rastreio dos Correios # "
+            document.getElementById('status').innerHTML = mens + hoje
+        }
+</script>
+<body onload="agora()">
+    <br>
+    <form>
+        <h3><div  id ='status'></div> </h3>
+        <hr>
+        {% if rastreio_list %}
+            {% for item in rastreio_list %}
+
+                <p style="margin-left:1em; color: yellow">
+                    {{item.idprod}}: {{item.nome}} - {{item.prduto}} - {{ item.codigo}} ...{{item.data}} - {{item.hora}} -> {{item.local}} : {{item.mens}}
+                </p>
+                <hr>
+            {% endfor %}
+            <a href="{% url 'index' %}">Retornar ao Status</a>
+        {% else %}
+            <p> Status de compras não disponível</p>
+        {% endif %}
+
+        
+    </form>
+    
+</body>
+</html>
