@@ -16,7 +16,7 @@
         background-color: grey;
         margin: 3em;
         margin-top: 1em;
-        width: 1300px;
+        width: 1000px;
         padding: 1em;
         border: 1px solid #ccc;
         border-radius: 1em;
@@ -28,19 +28,17 @@
         {
             diaDaSemana = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
             mesNome = new Array("Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","NOv","Dez")
-            now = new Date();
-            data = now.getDay() + "/" + ( now.getMonth()+1 )  + "/" + now.getFullYear()
-            hora = now.getHours() + ":" + now.getMinutes()
-            hoje = data + " " + hora + " - " + diaDaSemana[now.getDay()] + '-feira'
+            var data = new Date().toLocaleString();
+            // data = data + " " + diaDaSemana[now.getDay()] + '-feira'
             mens = "# Detalhe de rastreio dos Correios # "
-            document.getElementById('status').innerHTML = mens 
+            document.getElementById('status').innerHTML = mens + data
         }
     
 </script>
-<body  on onload="agora()">
+<body onload="agora()">
     <br>
     <form>
-        <h3><div  id ='status'></div> </h3>
+        <button  id ='status'  style ="background-color: grey; color :White; font-size: larger;" ></button>
         <hr>
         {% if error_message %}
             <p><strong>{{error_message}}</strong></p>
@@ -54,10 +52,14 @@
                         {{item.data}} - {{item.hora}} -> {{item.local}} : {{item.mens}}
                     </p>
                 {% endfor %}
-                <hr>
-                <p style="text-align:rigth" ><a href="{% url 'index' %}" >Retornar ao Status</a></p>
+        </ol>
+        <hr>
+        <br>
+        <button  style="background-color:salmon; font-size:medium; margin-left: 3em; border-radius: 1em; color:whitesmoke ">
+            <a href="{% url 'index' %}" >Retornar ao início</a>
+        </button>
+        <br>
 
-            </ol>
     </form>
     
 </body>
