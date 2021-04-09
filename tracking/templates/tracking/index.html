@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>git
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,28 +23,27 @@
     }
 </style>
 
-<script  type ="text/javascript">
+<script>
     function agora()
     {
-        diaDaSemana = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
-        mesNome = new Array("Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","NOv","Dez")
-        now = new Date();
-        data = now.getDay() + "/" + ( now.getMonth()+1 )  + "/" + now.getFullYear()
-        hora = now.getHours() + ":" + now.getMinutes()
-        hoje = data + " " + hora + " - " + diaDaSemana[now.getDay()] + '-feira'
-        mens = "# Status de rastreio dos Correios # "
-        document.getElementById('titulo').innerHTML = mens + hoje
+        var diaDaSemana = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
+        var mesNome = new Array("Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","NOv","Dez")
+        var now = new Date();
+        var data = new Date().toLocaleString() + " - " + diaDaSemana[now.getDay()] + '-feira'
+        var mens = "# Status de rastreio dos Correios # "
+        document.getElementById('titulo').innerHTML = mens + data
     }
 </script>
 <body onload="agora()" >
     <br>
     <form>       
-        <h3><div id ='titulo'></div> </h3>
+        <button id ='titulo' style="text-align: right; font-size:larger; background-color: gray; color: White"></button>
         <hr>
         {% if compras_list %}
             {% for item in compras_list %}
+        
                 <p style="margin-left:1em; color: yellow">
-                    <a href="{% url 'detail' item.id %}" >{{item.id}}</a>
+                    <button style="font-size:medium; background-color: orange; width: 3em; border-radius: 1em;"><a href="{% url 'detail' item.id %}" >{{item.id}}</a></button>                   
                     &nbsp; : 
                     {{item.nome}} - {{item.produto}} - {{ item.codigocp}} - {{item.datast}} - {{item.hora}} -> {{item.local}} : {{item.statuscp}}
                 </p>
