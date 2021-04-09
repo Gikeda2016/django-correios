@@ -2,7 +2,7 @@
 #
 Django - Correios (Iniciando...)
 
-Programa de Rastreio já existente em GitFlow- Correios, migrando para WEB via frameword Django.
+Programa de Rastreio já existente em GitFlow- Correios, migrando para WEB via framework Django.
 
 Inicializando a aprendizagem no framework Django, utilizando models, view, urls e template requerendo algum conhecimento de HTML5, CSS3 e JavaScript para criar os templates que estão sendo agregados no processo de aprendizagem.
 
