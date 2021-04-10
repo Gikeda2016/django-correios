@@ -14,16 +14,21 @@ form{
     border-radius: 1em;
 }
 
+button:hover{
+    background: repeating-linear-gradient(yellow, red)
+}
 .btns{
     text-align: center;
     font:normal;
 }
 
 .item_titulo{
-    color: white;
+    color: White;
     font-size:xx-large;
-    font-weight:bolder;
-    font-family:monospace;
+    font-family:Ubuntu;
+}
+p:hover{
+    background:black
 }
 
 .item_dados{
@@ -54,7 +59,10 @@ form{
 .retorno{
     background-color: salmon;
     color: whitesmoke;
-    font-size:medium;
+    font-family:Verdana;
+    font-size:large;
     margin-left: 3em;
+    width: 12em;
+    height: 2em ;
     border-radius: 1em;
 }
