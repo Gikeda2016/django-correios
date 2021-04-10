@@ -1,0 +1,60 @@
+body{
+    background-color: black;
+    color: white;
+    font: normal 14pt Times;    
+}
+
+form{
+    background-color: grey;
+    margin: 3em;
+    margin-top: 1em;
+    width: 1400px;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+}
+
+.btns{
+    text-align: center;
+    font:normal;
+}
+
+.item_titulo{
+    color: white;
+    font-size:xx-large;
+    font-weight:bolder;
+    font-family:monospace;
+}
+
+.item_dados{
+    font-size:larger;
+    font-family:Cambria;
+    color:yellow;
+    margin-left:1em;
+}
+
+.item_link{
+    /* <button style="font-size:medium; background-color: orange; width: 3em; border-radius: 1em;"><a href="{% url 'detail' item.id %}" >{{item.id}}</a></button>  */
+    background-color: orange;
+    font-size: large;
+    width: 3em;
+    border-radius: 1em;
+}
+
+.titulo{
+    background-color: gray;
+    color: White;
+    font-size:xx-large;
+    font-family:'Lucida Sans';
+    text-align: right;
+}
+
+
+
+.retorno{
+    background-color: salmon;
+    color: whitesmoke;
+    font-size:medium;
+    margin-left: 3em;
+    border-radius: 1em;
+}
