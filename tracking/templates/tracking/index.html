@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastreios - Correios</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<style>
+<!-- <style>
     body{
         background-color: black;
         color: white;
@@ -21,7 +23,7 @@
         border: 1px solid #ccc;
         border-radius: 1em;
     }
-</style>
+</style> -->
 
 <script>
     function agora()
@@ -31,19 +33,18 @@
         var now = new Date();
         var data = new Date().toLocaleString() + " - " + diaDaSemana[now.getDay()] + '-feira'
         var mens = "# Status de rastreio dos Correios # "
-        document.getElementById('titulo').innerHTML = mens + data
+        document.getElementById('cabecalho').innerHTML = mens + data
     }
 </script>
 <body onload="agora()" >
     <br>
     <form>       
-        <button id ='titulo' style="text-align: right; font-size:larger; background-color: gray; color: White"></button>
+        <button type="button" class="titulo"  id ='cabecalho'  ></button>
         <hr>
         {% if compras_list %}
-            {% for item in compras_list %}
-        
-                <p style="margin-left:1em; color: yellow">
-                    <button style="font-size:medium; background-color: orange; width: 3em; border-radius: 1em;"><a href="{% url 'detail' item.id %}" >{{item.id}}</a></button>                   
+            {% for item in compras_list %}      
+                <p class="item_dados">
+                    <button type="button" class="item_link"><a href="{% url 'detail' item.id %}" >{{item.id}}</a></button>                   
                     &nbsp; : 
                     {{item.nome}} - {{item.produto}} - {{ item.codigocp}} - {{item.datast}} - {{item.hora}} -> {{item.local}} : {{item.statuscp}}
                 </p>
