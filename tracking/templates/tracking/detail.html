@@ -7,59 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastreamento</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/util.js' %}"></script>
 </head>
-<!-- <style>
-    body{
-        background-color: rgb(12, 12, 12);
-        color: white;
-        font: normal 14pt Times;    
-    }
-    form{
-        background-color: grey;
-        margin: 3em;
-        margin-top: 1em;
-        width: 1000px;
-        padding: 1em;
-        border: 1px solid #ccc;
-        border-radius: 1em;
-</style>
-    } -->
-
-<script >
-    function agora()
-        {
-            diaDaSemana = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
-            mesNome = new Array("Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","NOv","Dez")
-            var data = new Date().toLocaleString();
-            // data = data + " " + diaDaSemana[now.getDay()] + '-feira'
-            mens = "# Detalhe de rastreio dos Correios # "
-            document.getElementById('status').innerHTML = mens + data
-        }
-    
-</script>
-<body onload="agora()">
+<body onload="Data()">
     <br>
     <form>
-        <button type="button" class="titulo" id ='status' ></button>
+        <label class="titulo" >Informações rastreiadas pelos Correios  </label>
         <hr>
         {% if error_message %}
             <p><strong>{{error_message}}</strong></p>
         {% endif %}
         {% csrf_token %}
         <ol>
-            <p class="item_titulo">{{compra}}</p>
+            <label class="item_titulo">{{compra}}</label>
 
                 {% for item in compra.rastreios_set.all %}
                     <p class="item_dados" >
                         {{item.data}} - {{item.hora}} -> {{item.local}} : {{item.mens}}
                     </p>
                 {% endfor %}
+                
         </ol>
+     
+        
         <hr>
-        <br>
-        <button type="button" class="retorno" >
+        <pre  id="hoje" style="text-align:right; color: black; font-size:large" ></pre>
+        <button type="button" class="retorno"  >
             <a href="{% url 'index' %}" >Retornar ao início</a>
         </button>
+
         <br>
 
     </form>

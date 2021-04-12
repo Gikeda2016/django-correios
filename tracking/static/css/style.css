@@ -1,68 +1,86 @@
-body{
-    background-color: black;
-    color: white;
-    font: normal 14pt Times;    
+body {
+  background-color: black;
+  color: white;
 }
 
-form{
-    background-color: grey;
-    margin: 3em;
-    margin-top: 1em;
-    width: 1400px;
-    padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 1em;
+form {
+  background-color: grey;
+  margin: 2em;
+  margin-top: 2em;
+  width: 1100px;
+  padding: 2em;
+  border: 2px solid #ccc;
+  border-radius: 1em;
 }
 
-button:hover{
-    background: repeating-linear-gradient(yellow, red)
-}
-.btns{
-    text-align: center;
-    font:normal;
+p {
+  line-height: 80%;
 }
 
-.item_titulo{
-    color: White;
-    font-size:xx-large;
-    font-family:Ubuntu;
-}
-p:hover{
-    background:black
+span {
+  font-size:medium;
+  font-family: "Courier New";
+  text-align:right;
 }
 
-.item_dados{
-    font-size:larger;
-    font-family:Cambria;
-    color:yellow;
-    margin-left:1em;
+p:hover {
+  background: rgb(95, 90, 90);
+  font-size: 130%;
 }
 
-.item_link{
-    /* <button style="font-size:medium; background-color: orange; width: 3em; border-radius: 1em;"><a href="{% url 'detail' item.id %}" >{{item.id}}</a></button>  */
-    background-color: orange;
-    font-size: large;
-    width: 3em;
-    border-radius: 1em;
+button:hover {
+  background: linear-gradient(yellow, red);
 }
 
-.titulo{
-    background-color: gray;
-    color: White;
-    font-size:xx-large;
-    font-family:'Lucida Sans';
-    text-align: right;
+label:hover {
+  background: repeating-linear-gradient(orange, green);
+  border-radius: 1em;
 }
 
+.btns {
+  text-align: center;
+  font: normal;
+}
 
+.item_titulo {
+  color: Yellow;
+  font-size: x-large;
+  font-family:"Lucida";
+  padding: 5px;
+}
 
-.retorno{
-    background-color: salmon;
-    color: whitesmoke;
-    font-family:Verdana;
-    font-size:large;
-    margin-left: 3em;
-    width: 12em;
-    height: 2em ;
-    border-radius: 1em;
+.item_dados {
+  font-size: 120%;
+  font-family: "Courier narrow";
+  color: white;
+  /* margin-left: 1em; */
+}
+
+.item_link {
+  /* <button style="font-size:medium; background-color: orange; width: 3em; border-radius: 1em;"><a href="{% url 'detail' item.id %}" >{{item.id}}</a></button>  */
+  background-color: orange;
+  font-size: medium;
+  width: 3em;
+  border-radius: 1em;
+}
+
+.titulo {
+  background-color: gray;
+  color: white;
+  font-size: 160%;
+  font-family: "Lucida Sans";
+  text-align: left;
+  padding: 10px;
+  /* margin-left: 1em; */
+}
+
+.retorno {
+  background-color: salmon;
+  color: whitesmoke;
+  font-family: Verdana;
+  font-size: large;
+  margin-left: 3em;
+  width: 12em;
+  height: 2em;
+  border-radius: 1em;
 }
